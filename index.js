@@ -1,8 +1,29 @@
 const express = require ('express');
+const Logger = require('./logger');
+const helmet = require('helmet');
+const morgan = require('morgan');
 const app = express();
 const Joi = require('joi')
 
 app.use(express.json());   //Global Middleware
+app.use(express.urlencoded({ extended:true}));
+app.use(express.static('public'))
+app.use(helmet());
+
+if(app.get('env')=== 'development'){
+app.use(morgan('tiny'))
+console.log("Morgan Enabled ...")
+}
+
+
+
+app.use(Logger);
+
+app.use(function(req,res,next){
+    console.log('Authenticating...');
+    next();
+});
+
 
 const courses = [
     {id:1,name:'course1'},
