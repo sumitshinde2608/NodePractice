@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/sumitshinde2608/nodepractice#readme",
   "dependencies": {
+    "config": "^3.3.6",
+    "debug": "^2.6.9",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "joi": "^13.1.0",
