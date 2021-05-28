@@ -24,6 +24,7 @@
     "helmet": "^4.6.0",
     "joi": "^13.1.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "supports-color": "^5.5.0"
   }
 }
