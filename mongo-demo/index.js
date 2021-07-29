@@ -40,4 +40,17 @@ async function getCourses() {
 	console.log(courses);
 }
 
-getCourses();
+// getCourses();
+
+async function updateCourse() {
+	const course = await Course.findOne({ name: "DSA Prep Course" });
+	if (!course) {
+		return console.log("Course not found");
+	}
+	course.isPublished = false;
+	course.name = "Mondo DB";
+	const result = await course.save();
+	console.log(result);
+}
+
+updateCourse();

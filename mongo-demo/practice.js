@@ -44,4 +44,12 @@ async function getCourse() {
 	console.log(course);
 }
 
-getCourse();
+async function updateCourse() {
+	const course = await Course.findOne({ name: "MongoDB" });
+	course.isPublished = false;
+	const result = await course.save();
+	console.log(result);
+}
+
+// getCourse();
+updateCourse();
